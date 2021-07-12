@@ -123,20 +123,9 @@ f.close()
 
 # edit for the git tutorial test
 
+# editing this again
+#more changes and deleted the import language at the end
 
-
-# from time import sleep
-# import re
-# from random import randint
-
-# from warnings import warn
-
-# from time import time
-
-# from IPython.core.display import clear_output
-
-
-# import numpy as np #ISSUES HERE
 
 
 
