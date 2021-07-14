@@ -41,32 +41,11 @@ container = containers[x] #issue here for some reason
 
 # print(container.h3.a.text)
 
-# #post title
+
 # board_title = container.div.h3.a.text #the html line within the .div.h3.a line contains straight text for the price. '.text' is how you ref that
 
 # print(board_title.strip())
 
-# #post date
-
-# board_post_date = container.div.time["datetime"]
-# print(board_post_date)
-
-# #board price
-# board_price = container.a.text
-
-# print(board_price.strip())
-
-# #boardLocations
-# board_location_line = container.find('span', class_= 'result-hood')
-# board_location = board_location_line.text
-# print(board_location)
-
-# #boardURL
-# board_URLLine = container.find('h3', class_='result-heading')
-
-# board_URL = board_URLLine.a["href"]
-
-# print(board_URL)
 
 #Board range capture. to ensure the surfboard range stays in the RI area:
 
