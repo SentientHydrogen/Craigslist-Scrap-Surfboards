@@ -66,7 +66,7 @@ filename = "Surfboards.csv"
 
 f = open(filename, "w")
 
-headers = "board_title, board_price, board_location, board_URL\n"
+headers = "board_title, board_price, board_location, board_URL, board post date\n"
 
 f.write(headers)
 
@@ -101,7 +101,7 @@ for contianer in containers[0:int(result_range)]:
     print("LOCATION: " +board_location)
     print("URL Link: " + board_URL)
     
-    f.write(board_title.replace(",", "|") + "," + board_price.replace(",", "|") + "," + board_location.replace(",", "|") + "," + board_URL.replace(",", "|") +"\n")
+    f.write(board_title.replace(",", "|") + "," + board_price.replace(",", "|") + "," + board_location.replace(",", "|") + "," + board_URL.replace(",", "|") + "," + board_post_date.replace(",", "|") + "\n")
     x = x+1
     if x<=int(result_range):
         container = containers[x]
