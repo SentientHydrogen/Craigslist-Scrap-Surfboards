@@ -51,8 +51,6 @@ container = containers[x] #issue here for some reason
 
 result_range_container = page_soup.find("div", {"class":"search-legend"})
 
-print(result_range_container)
-
 result_range_line = result_range_container.find("span", {"class":"totalcount"})
 
 result_range = result_range_line.text
@@ -71,7 +69,7 @@ headers = "board_title, board_price, board_location, board_URL, board post date\
 f.write(headers)
 
 
-for contianer in containers[0:int(result_range)]:
+for container in containers[0:int(result_range)]:
     
     if container.div.h3.a.text is not None:
         preboard_title = container.div.h3.a.text
@@ -90,6 +88,8 @@ for contianer in containers[0:int(result_range)]:
         if board_location_line.text is not None:
             preboard_location = board_location_line.text
             board_location = preboard_location.strip()
+        elif board_location is None:
+            board_location = "N/A"
     
     board_URLLine = container.find('h3', class_='result-heading')
     if board_URLLine.a["href"] is not None:
@@ -102,11 +102,7 @@ for contianer in containers[0:int(result_range)]:
     print("URL Link: " + board_URL)
     
     f.write(board_title.replace(",", "|") + "," + board_price.replace(",", "|") + "," + board_location.replace(",", "|") + "," + board_URL.replace(",", "|") + "," + board_post_date.replace(",", "|") + "\n")
-    x = x+1
-    if x<=int(result_range):
-        container = containers[x]
-    elif x>int(result_range):
-        print("End Loop")
+
 
 f.close()
 
